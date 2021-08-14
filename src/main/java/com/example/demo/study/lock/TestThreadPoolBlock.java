@@ -13,10 +13,10 @@ import java.util.concurrent.Future;
 public class TestThreadPoolBlock {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 //        testJoin();
-        testFutrue();
+        testFuture();
     }
 
-    private static void testFutrue() throws ExecutionException, InterruptedException {
+    private static void testFuture() throws ExecutionException, InterruptedException {
         ExecutorService pool = Executors.newFixedThreadPool(3);
         Future<?> submit = pool.submit(() -> {
                     try {
