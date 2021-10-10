@@ -5,6 +5,11 @@ import java.util.Collections;
 import java.util.Random;
 import java.util.stream.Stream;
 
+/**
+ *
+ *  Collections.shuffle();
+ *
+ */
 public class Shuffle {
 
     public static void main(String[] args){
@@ -20,12 +25,13 @@ public class Shuffle {
             card[i]=card[randomCard];
             card[randomCard]= (int) tmp;
         }
-//        Collections.shuffle();
+
         System.out.println(Arrays.toString(card));
 
     }
 
-    private static int random(int i) {
+    private static int  random(int i) {
+        //伪随机
         Random random = new Random();
         return random.nextInt(i);
     }

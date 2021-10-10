@@ -1,5 +1,6 @@
 package com.example.demo.study.lock;
 
+import java.util.LinkedList;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -10,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TestReentrantLock {
     public static void main(String[] args) {
         //测试三个线程购买票，加锁后按顺序执行
+        new LinkedList<>();
         MyThread myThread = new MyThread();
         new Thread(myThread).start();
         new Thread(myThread).start();
@@ -20,9 +22,10 @@ public class TestReentrantLock {
         private final ReentrantLock reentrantLock= new ReentrantLock();
         int ticketNumber=10;
         @Override
-        public void run() {
+        public void  run() {
             try {
-                reentrantLock.lock();
+                // lock 阻塞加锁
+              reentrantLock.lock();
                 while (true){
                     if(ticketNumber>0){
                         System.out.println(ticketNumber--);

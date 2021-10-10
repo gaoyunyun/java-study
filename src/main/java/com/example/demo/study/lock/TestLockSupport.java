@@ -17,8 +17,8 @@ public class TestLockSupport {
         Thread thread = new Thread(new Mythread());
         thread.start();
         Thread.sleep(100);
-        System.out.println(Thread.currentThread().getName()+"主线程执行中");
         LockSupport.unpark(thread);
+        System.out.println(Thread.currentThread().getName()+"主线程执行中");
         System.out.println(Thread.currentThread().getName()+"主线程执行结束");
     }
 
